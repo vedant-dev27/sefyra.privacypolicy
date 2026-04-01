@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Sefyra</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0f14;
+      --surface: #13161d;
+      --border: #1f2330;
+      --accent: #5c8aff;
+      --accent-dim: rgba(92,138,255,0.12);
+      --text: #e8eaf0;
+      --muted: #7a7f96;
+      --tag-bg: rgba(92,138,255,0.1);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* grain overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.6;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 32px 120px;
+    }
+
+    /* header */
+    .app-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--tag-bg);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 6px 16px 6px 10px;
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+      color: var(--accent);
+      letter-spacing: 0.04em;
+      margin-bottom: 40px;
+    }
+
+    .app-badge .dot {
+      width: 6px; height: 6px;
+      background: var(--accent);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--accent);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2.4rem, 6vw, 3.6rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 15px;
+      margin-bottom: 16px;
+    }
+
+    .meta {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      margin-bottom: 64px;
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    /* sections */
+    section {
+      margin-bottom: 52px;
+      opacity: 0;
+      transform: translateY(16px);
+      animation: fadeUp 0.5s ease forwards;
+    }
+
+    section:nth-child(1) { animation-delay: 0.05s; }
+    section:nth-child(2) { animation-delay: 0.12s; }
+    section:nth-child(3) { animation-delay: 0.19s; }
+    section:nth-child(4) { animation-delay: 0.26s; }
+    section:nth-child(5) { animation-delay: 0.33s; }
+    section:nth-child(6) { animation-delay: 0.40s; }
+    section:nth-child(7) { animation-delay: 0.47s; }
+    section:nth-child(8) { animation-delay: 0.54s; }
+
+    @keyframes fadeUp {
+      to { opacity: 1; transform: none; }
+    }
+
+    h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    h2::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    p {
+      color: #b0b4c8;
+      margin-bottom: 12px;
+      font-size: 15px;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 12px 0;
+    }
+
+    ul li {
+      color: #b0b4c8;
+      font-size: 15px;
+      padding: 8px 0 8px 20px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+
+    ul li:last-child { border-bottom: none; }
+
+    ul li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-family: 'DM Mono', monospace;
+      font-size: 12px;
+    }
+
+    .highlight-box {
+      background: var(--accent-dim);
+      border: 1px solid rgba(92,138,255,0.25);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 16px 0;
+    }
+
+    .highlight-box p {
+      margin: 0;
+      color: #c8cee8;
+    }
+
+    strong { color: var(--text); font-weight: 500; }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(92,138,255,0.3);
+      transition: border-color 0.2s;
+    }
+    a:hover { border-color: var(--accent); }
+
+    /* footer */
+    footer {
+      margin-top: 80px;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: gap;
+      gap: 16px;
+    }
+
+    footer .brand {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+
+    footer .brand span { color: var(--accent); }
+
+    footer p {
+      font-family: 'DM Mono', monospace;
+      font-size: 11px;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 48px 20px 80px; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <div class="app-badge">
+    <span class="dot"></span>
+    Sefyra · Privacy Policy
+  </div>
+
+  <h1>Your data<br><em>stays with you.</em></h1>
+  <p class="subtitle">Sefyra is a local peer-to-peer file sharing app. We built it to work entirely on your device and local network — no cloud, no tracking.</p>
+
+  <div class="meta">
+    <span>Effective: June 2025</span>
+    <span>Last Updated: June 2025</span>
+    <span>Platform: Android</span>
+  </div>
+
+  <section>
+    <h2>Overview</h2>
+    <p>Sefyra ("the app", "we", "our") is a free, open-use Android application that enables direct peer-to-peer file transfers between devices on the same local Wi-Fi network. This Privacy Policy explains what information is involved when you use Sefyra, and confirms that we do not collect, store, or transmit any personal data to external servers.</p>
+  </section>
+
+  <section>
+    <h2>Information We Do Not Collect</h2>
+    <p>Sefyra does not collect, transmit, or store any of the following:</p>
+    <ul>
+      <li>Personal identification information (name, email, phone number)</li>
+      <li>Account credentials of any kind</li>
+      <li>Location data</li>
+      <li>Usage analytics or crash reports sent to third parties</li>
+      <li>The content or metadata of files you transfer</li>
+      <li>Device identifiers sent to any remote server</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How Sefyra Works</h2>
+    <div class="highlight-box">
+      <p>All file transfers happen <strong>entirely on your local network</strong>, directly between devices. No data is routed through our servers — because we don't have any.</p>
+    </div>
+    <p>Sefyra uses UDP broadcast on your local Wi-Fi to discover nearby devices also running the app. Once a connection is established, files are transferred via TCP directly between the two devices. This process never leaves your local network.</p>
+  </section>
+
+  <section>
+    <h2>Permissions Used</h2>
+    <p>Sefyra requests only the permissions necessary for its core functionality:</p>
+    <ul>
+      <li><strong>Wi-Fi &amp; Network Access</strong> — required to discover devices and transfer files on the local network</li>
+      <li><strong>Nearby Devices (Android 12+)</strong> — required by the OS for local network peer discovery</li>
+      <li><strong>Read/Write Storage</strong> — required to read files you choose to send and save files you receive</li>
+    </ul>
+    <p>No permission data is shared externally. All permission usage stays on your device.</p>
+  </section>
+
+  <section>
+    <h2>Third-Party Services</h2>
+    <p>Sefyra does not integrate any third-party analytics, advertising, tracking, or crash reporting SDKs. There are no ads in the app.</p>
+  </section>
+
+  <section>
+    <h2>Children's Privacy</h2>
+    <p>Sefyra does not knowingly collect any information from children under the age of 13. Since the app collects no personal data whatsoever, it presents no risk to children's privacy.</p>
+  </section>
+
+  <section>
+    <h2>Changes to This Policy</h2>
+    <p>If we ever update this Privacy Policy — for instance, if we add new features — we will update the effective date above. Significant changes will be communicated through app update notes on the Play Store. Continued use of Sefyra after any change constitutes acceptance of the updated policy.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>If you have any questions about this Privacy Policy or how Sefyra handles data, you can reach us at:</p>
+    <p><a href="mailto:your@email.com">your@email.com</a></p>
+    <p style="margin-top:8px; font-size:13px; color: var(--muted);">Replace this with your actual contact email before publishing.</p>
+  </section>
+
+  <footer>
+    <div class="brand">Sef<span>yra</span></div>
+    <p>© 2025 Sefyra. No data collected. No servers. Just sharing.</p>
+  </footer>
+
+</div>
+</body>
+</html>
